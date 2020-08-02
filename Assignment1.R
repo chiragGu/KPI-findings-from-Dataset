@@ -1,7 +1,10 @@
 #######################################
 # Reading and cleaning the data
 data1<-read.csv("/Users/chirag/Desktop/citymalldataanalystassignment/Assignment\ 1.csv")
-month_in_words<- months(user_order_date$`Order Date`)
+Date_data<- data1$created_at
+Only_Date<- as.Date(Date_data)
+user_order_date<- data.frame(data1$order_id, data1$user_id ,Only_Date)
+month_in_words<- months(user_order_date$Only_Date)
 month_nos<- strftime(Only_Date, "%m")
 month_nos<- as.numeric(month_nos)
 head(month_nos)
@@ -13,7 +16,6 @@ head(data,3)
 # Collecting the users who were active in the month of may and june
 month<-data$month_nos
 counter<-0
-counter1<-0
 array<-c()
 for(i in month){
 counter=counter+1
@@ -43,7 +45,7 @@ for(i in month){
 # Removing the redundant user using unique and telling providing the number of leaders
 unique2<-unique(array1)
 print(length(unique2))
-# ASSIGNMENT-1:PART2 (No. of reactive users (who ordered in May and July but not in June))
+# ASSIGNMENT-1:PART2 (No. of reactive users (who ordered in May , July but not in June))
 #######################################
 counter3<-0
 counter4<-0
