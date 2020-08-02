@@ -3,7 +3,7 @@
 
 
 
-#### BEFORE STARTING THE CALCULATIONS
+#### BEFORE STARTING THE ANALYSIS
 
 > Read the dataset using read.csv()
 > RemovE "NA" from the dataset so that the dataset is clean.
